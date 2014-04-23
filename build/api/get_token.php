@@ -18,10 +18,9 @@ $fields = array(
 	'code' => urlencode($code)
 );
 
-$result = req_curl( $url, $fields );
+$result = json_decode(req_curl( $url, $fields ));
 
-$_SESSION['access_token'] = json_decode($result)->access_token;
-
-echo '{ "success" : true }';
+$_SESSION['access_token'] = $result->access_token;
+echo json_encode($result->athlete);
 
 ?>
