@@ -1,0 +1,160 @@
+
+.block {
+
+	/*
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	*/
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px 0 0 20px;
+
+	width: 600px;
+	height: 300px;
+
+	padding: 20px;
+	background: $block;
+	@include box-shadow(1px 1px 2px 2px #eee);
+	//@include transition( transform 1s ease-in-out );
+
+	&.block-intro {
+		
+		//left: 0;
+		//top: 0;
+		padding: 0;
+		margin: 0;
+
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background: $bg;
+
+		@include opacity(0);
+		@include transform( translate3d(0, 30px, 0) );
+		@include transition( all 0.5s ease-out 0.5s );
+
+		&.fadeUp {
+			@include opacity(1);
+			@include transform( translate3d(0, 0, 0) );
+		}
+
+		.intro {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			margin: -240px 0 0;
+
+			h2 {
+				font-size: 30px;
+				font-weight: 400;
+				margin-bottom: 40px;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+
+		.intro-links {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			
+			margin: 100px 0 0;
+
+			.link-login,
+			.link-visualize {
+				display: inline-block;
+				vertical-align: top;
+			}
+			.link-login {
+				margin-right: 20px;
+			}
+			.link-visualize {
+				margin-left: 20px;
+				font-size: 14px;
+				height: 25px;
+				padding-top: 8px;
+			}
+		}
+	}
+
+	&.block-athlete {
+
+		border: 1px solid #eee;
+
+		//@include transform( translate3d(0, 0, 0) );
+		//@include transition( transform 0.2s ease-out );
+
+		img {
+			display: block;
+			float: left;
+			width: 60px;
+		}
+		.name {
+			display: block;
+			float: left;
+			width: 160px;
+
+			padding: 10px 10px 0;
+		}
+		.location {
+			display: block;
+			float: left;
+			width: 160px;
+			padding: 10px;
+
+			padding: 5px 10px 0;
+			font-size: 12px;
+		}
+		/*
+		&.ng-animate {
+			@include transform( translate3d(-620px, 0, 0) );
+		}
+		*/
+	}
+
+	&.block-activities-overview {
+		
+		/*
+		@include transform( translate3d(0, 0, 0) );
+		@include transition( transform 0.2s ease-out );
+
+		&.ng-animate {
+			@include transform( translate3d(-620px, 0, 0) );
+		}
+		*/
+	}
+
+	&.block-map {
+		
+	}
+
+	&.block-hours {
+		
+	}
+
+	&.block-run-pb {
+		
+	}
+
+	&.block-run-world-record {
+		
+	}
+
+	&.block-ride-kom {
+		
+	}
+
+	$class-slug: block !default;
+	@for $i from 0 through 6 {
+		&.#{$class-slug}-#{$i} {
+			top: 140px + ($i * 360);
+		}
+	}
+
+}

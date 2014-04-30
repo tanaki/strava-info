@@ -1,0 +1,26 @@
+
+.hours-chart {
+	
+	rect {
+		fill: $strava;
+	}
+
+	text {
+		fill: white;
+		font-size: 11px;
+		text-anchor: middle;
+	}
+
+	.axis {
+		text {
+			fill: black;
+		}
+
+		path,
+		line {
+			fill: none;
+			stroke: #000;
+			shape-rendering: crispEdges;
+		}
+	}
+}

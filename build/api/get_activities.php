@@ -4,7 +4,7 @@ session_start();
 
 header('Content-type: application/json');
 
-$per_page = 15;
+$per_page = 50;
 $access_token = $_SESSION['access_token'];
 
 $url = 'https://www.strava.com/api/v3/activities';
